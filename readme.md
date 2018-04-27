@@ -41,8 +41,12 @@ If you get an error you may need to run "`php artisan passport:install`" once ag
 
 If you have done STEP 1.4, you may also login via the blade-based html-frontend. Now after that, lets start create some vue-components for the frontend.
 
+## Step 5
+Adding a vue components (based on https://github.com/cretueusebiu/laravel-vue-spa).
+
 # Resources
 * https://laravel.com/docs/5.5/installation
 * https://laravel.com/docs/5.6/passport
 * http://learninfinity.info/laravel-5-api-authentication-using-passport/
 * https://stackoverflow.com/a/48041832
+* https://github.com/cretueusebiu/laravel-vue-spa
