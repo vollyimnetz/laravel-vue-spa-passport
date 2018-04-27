@@ -27,6 +27,19 @@ If you get the error "`Syntax error or access violation: 1071 Specified key was 
 2. add "`Passport::routes();`" to boot-function of "`App\Providers\AuthServiceProvider`"
 3. in "`config/auth.php`" change guards > api > diver to "`'driver' => 'passport',`"
 
+## Step 4
+1. Add API-Routes for registration, login and a protected route (based on http://learninfinity.info/laravel-5-api-authentication-using-passport/).
+2. Add the "`ApiBaseController`" for some functions for the functionality.
+
+You may now check the routes postman if all things run as defined.
+
+* POST `api/userregister`
+* POST `api/userlogin` (you get an access-token in return)
+* GET `api/userdetails` (or any other protected api-route) with the Header "`Authorization: Bearer [your access-token]`"
+
+If you get an error you may need to run "`php artisan passport:install`" once again.
+
+If you have done STEP 1.4, you may also login via the blade-based html-frontend. Now after that, lets start create some vue-components for the frontend.
 
 # Resources
 * https://laravel.com/docs/5.5/installation
