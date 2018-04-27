@@ -19,11 +19,13 @@ Migration and Setup
 If you get the error "`Syntax error or access violation: 1071 Specified key was too long; ...`" you have an problem with an old mysql or an maria databases. Here is how to fix this (for laravel 5.6).
 
 1. Open "`config/database.php`" and change the connections > mysql > engine to "`InnoDB ROW_FORMAT=DYNAMIC`".
-2. Open "`app/Providers/AppServiceProvider`" and add the following code in the boot-function: "`\Illuminate\Support\Facades\Schema::defaultStringLength(191);`"
+2. Open "`app/Providers/AppServiceProvider.php`" and add the following code in the boot-function: "`\Illuminate\Support\Facades\Schema::defaultStringLength(191);`"
 3. Run "`php artisan migrate:fresh`" to delete all existing tables an restart the migration.
 
 ## Step 3
-... todo
+1. add "`HasApiTokens`" trait to "`App\User`"
+2. add "`Passport::routes();`" to boot-function of "`App\Providers\AuthServiceProvider`"
+3. in "`config/auth.php`" change guards > api > diver to "`'driver' => 'passport',`"
 
 
 # Resources
